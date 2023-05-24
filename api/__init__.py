@@ -11,7 +11,7 @@ CORS(app)
 # user = "boaflhol",
 # password = "W0uDCKGtsASbQSjYDCMs-h1o-lxqdE4n"
 
-app.config["SQLALCHEMY_DATABASE_URI"] = "postgres://mzhvipvp:LKFCU5m3TA53AkdQf0l3EbO4ww8Dw-Ex@snuffleupagus.db.elephantsql.com/mzhvipvp:5432/mzhvipvp"
+app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://mzhvipvp:LKFCU5m3TA53AkdQf0l3EbO4ww8Dw-Ex@snuffleupagus.db.elephantsql.com/mzhvipvp:5432/mzhvipvp"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db = SQLAlchemy(app)
 
