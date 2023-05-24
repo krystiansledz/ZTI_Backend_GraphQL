@@ -1,0 +1,46 @@
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+type Student {
+    id: ID!
+    first_name: String!
+    last_name: String!
+    specialization: String!
+    degree: Int!
+    semester: Int!
+    is_male: Boolean!
+    average_grade: Float
+    hair_color: String
+    height: Float
+    weight: Float
+    age: Int
+}
+
+type StudentResult {
+    success: Boolean!
+    errors: [String]
+    student: Student
+}
+
+type StudentsResult {
+    success: Boolean!
+    errors: [String]
+    students: [Student]
+    total_count: Int!
+    page: Int!
+}
+
+type Query {
+    readStudents(limit: Int, offset: Int, specialization: [String], degree: [String], semester: [String]): StudentsResult!
+    readStudent(id: ID!): StudentResult!
+}
+
+type Mutation {
+    createStudent(first_name: String!, last_name: String!, specialization: String!, degree: String!, semester: String!, is_male: Boolean!,
+                  average_grade: Float, hair_color: String, height: Float, weight: Float, age: Int): StudentResult!
+    updateStudent(id: ID!, first_name: String, last_name: String, specialization: String, degree: String, semester: String, is_male: Boolean!,
+                  average_grade: Float, hair_color: String, height: Float, weight: Float, age: Int): StudentResult!
+    deleteStudent(id: ID): StudentResult!
+}
